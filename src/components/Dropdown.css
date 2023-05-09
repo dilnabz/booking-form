@@ -1,5 +1,4 @@
 .dropdown-container {
-    width: 180px;
     text-align: left;
     border: 1px solid #ccc;
     position: relative;
@@ -16,6 +15,7 @@
 
 .dropdown-menu {
     width: 100%;
+    z-index: 1;
     position: absolute;
     transform: translateY(4px);
     border: 1px solid #ccc;
@@ -40,9 +40,6 @@
 }
 
 @media (max-device-width:1324px){
-    .dropdown-container {
-        width: 40%;
-    }
 
     .dropdown-menu {
         z-index: 1;
@@ -50,9 +47,6 @@
 }
 
 @media (max-device-width:480px){
-    .dropdown-container {
-        width: 80%;
-    }
 
     .dropdown-menu {
         z-index: 1;

@@ -20,24 +20,33 @@ export function App() {
 	const [selectedTower, setSelectedTower] = useState(null);
 	const [selectedFloor, setSelectedFloor] = useState(null);
 	const [selectedMeetingRoom, setSelectedMeetingRoom] = useState(null);
+	const [comment, setComment] = useState("");
 
-	function handleSubmit() {
+	function handleSubmit(e) {
+		e.preventDefault();
 		const data = {
 			tower: selectedTower,
 			floor: selectedFloor,
 			meetingRoom: selectedMeetingRoom,
 			date: startDate,
 			startTime: startTime,
-			endTime: endTime
+			endTime: endTime,
+			comment: comment
 		};
-		
-		console.log(JSON.stringify(data));
+
+		if(Object.values(data).some(value => value === null || value === "")) {
+			alert("Пожалуйста, заполните все поля")
+		} else {
+			console.log(JSON.stringify(data));
+		};
+
 	};
 
 	function clearAll() {
 		setStartDate("");
 		setStartTime("");
 		setEndTime("");
+		setComment("");
 		setSelectedTower(null);
 		setSelectedFloor(null);
 		setSelectedMeetingRoom(null);
@@ -56,10 +65,10 @@ export function App() {
   	});
 
   	return (      
-    <div className='app'>
-		<h1 className='title'>Бронирование переговорной</h1>
-    	<div className='container'>
-			<div>
+    <div className="app">
+		<h1 className="title">Бронирование переговорной</h1>
+    	<form className="container" onSubmit={handleSubmit}>
+			<div className="dropdown">
     			<Dropdown 
 					placeHolder="Башня"
 					options={towers}
@@ -67,7 +76,7 @@ export function App() {
 					onSelectedChange={setSelectedTower}
 				/>
     		</div>
-			<div>
+			<div className="dropdown">
     			<Dropdown 
 					placeHolder="Этаж"
 					options={floors}
@@ -75,7 +84,7 @@ export function App() {
 					onSelectedChange={setSelectedFloor}
 				/>
     		</div>
-			<div>
+			<div className="dropdown">
     			<Dropdown 
 					placeHolder="Переговорная"
 					options={meetingRooms}
@@ -83,7 +92,7 @@ export function App() {
 					onSelectedChange={setSelectedMeetingRoom}
 				/>
     		</div>
-    		<div>
+    		<div className="datepicker">
         		<DatePicker
         			locale="ru"    
         			selected={startDate}         
@@ -91,7 +100,7 @@ export function App() {
 					placeholderText="Выберите дату"          
         		/>
     		</div>
-			<div>
+			<div className="datepicker">
 				<DatePicker
       				selected={startTime}
       				onChange={(date) => setStartTime(date)}
@@ -103,21 +112,31 @@ export function App() {
 					placeholderText="Начало"
     			/>
 			</div>
-			<div>
+			<div className="datepicker">
 				<DatePicker
       				selected={endTime}
       				onChange={(date) => setEndTime(date)}
       				showTimeSelect
       				showTimeSelectOnly
-      				timeIntervals={15}
+      				timeIntervals={30}
       				timeCaption="Time"
       				dateFormat="HH:mm"
 					placeholderText="Конец"
     			/>
 			</div>
-			<button onClick={handleSubmit} className="submitBtn">Отправить</button>
-			<button onClick={clearAll} className="clearBtn">Очистить</button>
+			<div>
+			<textarea 
+				value={comment} 
+				placeholder="Оставьте комментарий"
+				onChange={e => setComment(e.target.value)} 
+				rows="5"
+				cols="100"
+				maxLength="150"
+			/>
 		</div>
+			<button type="submit" className="submitBtn">Отправить</button>
+		</form>
+		<button onClick={clearAll} className="clearBtn">Очистить</button>
     </div> 
   );
 };
