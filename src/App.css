@@ -1,10 +1,17 @@
 .app {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.app div {
-  width: 100%;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 .submitBtn, .clearBtn {
@@ -13,4 +20,25 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+@media (max-device-width:1324px){
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .submitBtn, .clearBtn{
+    width: 40%;
+  }
+}
+
+@media (max-device-width:480px){
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submitBtn, .clearBtn{
+    width: 81%;
+  }
 }

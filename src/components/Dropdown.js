@@ -50,11 +50,6 @@ export function Dropdown({
         <div className="dropdown-container">
             <div ref={inputRef} onClick={handleInputClick} className="dropdown-input">
                 <div className="dropdown-selected-value">{getDisplay()}</div>
-                {/* <div className="dropdown-tools">
-                    <div className="dropdown-tool">
-                        
-                    </div>
-                </div> */}
             </div>
             {showMenu && (<div className="dropdown-menu">
                 {options.map((option) => {

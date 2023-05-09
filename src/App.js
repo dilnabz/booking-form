@@ -29,7 +29,8 @@ export function App() {
 			date: startDate,
 			startTime: startTime,
 			endTime: endTime
-		}
+		};
+		
 		console.log(JSON.stringify(data));
 	};
 
@@ -56,64 +57,67 @@ export function App() {
 
   	return (      
     <div className='app'>
-    	<div>
-    		<Dropdown 
-				placeHolder="Башня"
-				options={towers}
-				selected={selectedTower}
-				onSelectedChange={setSelectedTower}
-			/>
-    	</div>
-		<div>
-    		<Dropdown 
-				placeHolder="Этаж"
-				options={floors}
-				selected={selectedFloor}
-				onSelectedChange={setSelectedFloor}
-			/>
-    	</div>
-		<div>
-    		<Dropdown 
-				placeHolder="Переговорная"
-				options={meetingRooms}
-				selected={selectedMeetingRoom}
-				onSelectedChange={setSelectedMeetingRoom}
-			/>
-    	</div>
-    	<div>
-        	<DatePicker
-        		locale="ru"    
-        		selected={startDate}         
-        		onChange={(date) => setStartDate(date)}
-				placeholderText="Выберите дату"          
-        	/>
-    	</div>
-		<div>
-			<DatePicker
-      			selected={startTime}
-      			onChange={(date) => setStartTime(date)}
-      			showTimeSelect
-      			showTimeSelectOnly
-      			timeIntervals={15}
-      			timeCaption="Time"
-      			dateFormat="HH:mm"
-				placeholderText="Начало"
-    		/>
+		<h1 className='title'>Бронирование переговорной</h1>
+    	<div className='container'>
+			<div>
+    			<Dropdown 
+					placeHolder="Башня"
+					options={towers}
+					selected={selectedTower}
+					onSelectedChange={setSelectedTower}
+				/>
+    		</div>
+			<div>
+    			<Dropdown 
+					placeHolder="Этаж"
+					options={floors}
+					selected={selectedFloor}
+					onSelectedChange={setSelectedFloor}
+				/>
+    		</div>
+			<div>
+    			<Dropdown 
+					placeHolder="Переговорная"
+					options={meetingRooms}
+					selected={selectedMeetingRoom}
+					onSelectedChange={setSelectedMeetingRoom}
+				/>
+    		</div>
+    		<div>
+        		<DatePicker
+        			locale="ru"    
+        			selected={startDate}         
+        			onChange={(date) => setStartDate(date)}
+					placeholderText="Выберите дату"          
+        		/>
+    		</div>
+			<div>
+				<DatePicker
+      				selected={startTime}
+      				onChange={(date) => setStartTime(date)}
+      				showTimeSelect
+      				showTimeSelectOnly
+      				timeIntervals={15}
+      				timeCaption="Time"
+      				dateFormat="HH:mm"
+					placeholderText="Начало"
+    			/>
+			</div>
+			<div>
+				<DatePicker
+      				selected={endTime}
+      				onChange={(date) => setEndTime(date)}
+      				showTimeSelect
+      				showTimeSelectOnly
+      				timeIntervals={15}
+      				timeCaption="Time"
+      				dateFormat="HH:mm"
+					placeholderText="Конец"
+    			/>
+			</div>
+			<button onClick={handleSubmit} className="submitBtn">Отправить</button>
+			<button onClick={clearAll} className="clearBtn">Очистить</button>
 		</div>
-		<div>
-			<DatePicker
-      			selected={endTime}
-      			onChange={(date) => setEndTime(date)}
-      			showTimeSelect
-      			showTimeSelectOnly
-      			timeIntervals={15}
-      			timeCaption="Time"
-      			dateFormat="HH:mm"
-				placeholderText="Конец"
-    		/>
-		</div>
-		<button onClick={handleSubmit} className="submitBtn">Отправить</button>
-		<button onClick={clearAll} className="clearBtn">Очистить</button>
     </div> 
   );
 };

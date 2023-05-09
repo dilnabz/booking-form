@@ -8,3 +8,29 @@
     border-radius: 5px;
     padding: 8px;
 }
+
+@media (max-device-width:1324px){
+    .react-datepicker-wrapper {
+        margin: 5px;
+    }
+    
+    .react-datepicker__input-container input {
+        width: 39%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+    }
+}
+
+@media (max-device-width:480px){
+    .react-datepicker-wrapper {
+        margin: 5px;
+    }
+    
+    .react-datepicker__input-container input {
+        width: 76%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+    }
+}
