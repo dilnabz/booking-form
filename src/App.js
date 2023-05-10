@@ -45,9 +45,9 @@ export function App() {
 		.join(":");
 		
 		const data = {
-			tower: selectedTower,
-			floor: selectedFloor,
-			meetingRoom: selectedMeetingRoom,
+			tower: selectedTower.value,
+			floor: selectedFloor.value,
+			meetingRoom: selectedMeetingRoom.value,
 			date: startDate,
 			startTime: sTime,
 			endTime: eTime,
