@@ -116,8 +116,8 @@ export function App() {
     				</div>
 				</div>
 				<div className="dateContainer">
+					<div className="dateTitle">Начало</div>
 					<div className="datepicker">
-						<div className="dateTitle">Начало</div>
 						<DatePicker
 							locale="ru"
       						selected={startTime}
@@ -132,8 +132,8 @@ export function App() {
 					</div>
 				</div>
 				<div  className="dateContainer">
+					<div className="dateTitle">Конец</div>
 					<div className="datepicker">
-						<div className="dateTitle">Конец</div>
 						<DatePicker
       						selected={endTime}
       						onChange={(date) => setEndTime(date)}
