@@ -3,14 +3,12 @@
     border: 1px solid #ccc;
     position: relative;
     border-radius: 5px;
-    margin: 5px;
   }
   
 .dropdown-input {
-    display: flex;
     padding: 5px;
     align-items: center;
-    user-select: none;
+    cursor: pointer;
 }
 
 .dropdown-menu {
@@ -39,7 +37,7 @@
     color: #fff;
 }
 
-@media (max-device-width:1324px){
+/* @media (max-device-width:1324px){
 
     .dropdown-menu {
         z-index: 1;
@@ -51,5 +49,5 @@
     .dropdown-menu {
         z-index: 1;
     }
-}
+} */
 
