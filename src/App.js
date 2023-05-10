@@ -160,16 +160,16 @@ export function App() {
 			</div>
 			<div className='submitBtnContainer'>
 				<button 
-					type="submit" 
-					className="submitBtn"
-				>
-					Отправить
-				</button>
-				<button 
 					type="reset" 
 					className="clearBtn"
 				>
 					Очистить
+				</button>
+				<button 
+					type="submit" 
+					className="submitBtn"
+				>
+					Отправить
 				</button>
 			</div>
 			
