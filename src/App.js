@@ -79,7 +79,7 @@ export function App() {
 			<div className='dropdownContainer'>
 				<div className="dropdown">
     				<Dropdown 
-						placeHolder="Башня"
+						placeHolder="Выберите башню"
 						options={towers}
 						selected={selectedTower}
 						onSelectedChange={setSelectedTower}
@@ -87,7 +87,7 @@ export function App() {
     			</div>
 				<div className="dropdown">
     				<Dropdown 
-						placeHolder="Этаж"
+						placeHolder="Выберите этаж"
 						options={floors}
 						selected={selectedFloor}
 						onSelectedChange={setSelectedFloor}
@@ -95,7 +95,7 @@ export function App() {
     			</div>
 				<div className="dropdown">
     				<Dropdown 
-						placeHolder="Переговорная"
+						placeHolder="Выберите переговорную"
 						options={meetingRooms}
 						selected={selectedMeetingRoom}
 						onSelectedChange={setSelectedMeetingRoom}
